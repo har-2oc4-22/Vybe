@@ -27,8 +27,10 @@ app.use("/api/loop",loopRouter)
 app.use("/api/story",storyRouter)
 app.use("/api/message",messageRouter)
 
-
-server.listen(port , ()=>{
+connectDb().then(() => {
+  server.listen(port , ()=>{
     console.log("server started")
-})
+});
+});
+
 
