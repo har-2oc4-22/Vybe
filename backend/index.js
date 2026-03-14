@@ -11,7 +11,7 @@ import storyRouter from "./routes/story.routes.js"
 import messageRouter from "./routes/message.routes.js"
 import { app, server } from "./socket.js"
 dotenv.config()
-
+await connectDb();
 const port=process.env.PORT || 5000
 app.use(cors({
     origin:`${process.env.FRONTEND_URL}`,
@@ -29,7 +29,6 @@ app.use("/api/message",messageRouter)
 
 
 server.listen(port , ()=>{
-    connectDb()
     console.log("server started")
 })
 
