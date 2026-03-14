@@ -10,7 +10,7 @@ function getSuggestedUsers() {
   useEffect(()=>{
 const fetchUser=async ()=>{
     try {
-        const result=await axios.get(`${process.meta.env.serverUrl}/api/user/suggested`,{withCredentials:true})
+        const result=await axios.get(`${import.meta.env.serverUrl}/api/user/suggested`,{withCredentials:true})
          dispatch(setSuggestedUsers(result.data))
     } catch (error) {
         console.log(error)

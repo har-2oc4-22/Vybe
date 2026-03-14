@@ -22,7 +22,7 @@ const handleStep1=async ()=>{
     setLoading(true)
     setErr("")
     try {
-        const result=await axios.post(`${process.meta.env.serverUrl}/api/auth/sendOtp`,{email},{withCredentials:true})
+        const result=await axios.post(`${import.meta.env.serverUrl}/api/auth/sendOtp`,{email},{withCredentials:true})
         console.log(result.data)
         setStep(2)
         setLoading(false)
@@ -36,7 +36,7 @@ const handleStep2=async ()=>{
      setLoading(true)
      setErr("")
     try {
-        const result=await axios.post(`${process.meta.env.serverUrl}/api/auth/verifyOtp`,{email,otp},{withCredentials:true})
+        const result=await axios.post(`${import.meta.env.serverUrl}/api/auth/verifyOtp`,{email,otp},{withCredentials:true})
         console.log(result.data)
         setLoading(false)
         setStep(3)
@@ -55,7 +55,7 @@ const handleStep3=async ()=>{
     try {
     
 
-        const result=await axios.post(`${process.meta.env.serverUrl}/api/auth/resetPassword`,{email,password:newPassword},{withCredentials:true})
+        const result=await axios.post(`${import.meta.env.serverUrl}/api/auth/resetPassword`,{email,password:newPassword},{withCredentials:true})
         console.log(result.data)
         setLoading(false)
     } catch (error) {

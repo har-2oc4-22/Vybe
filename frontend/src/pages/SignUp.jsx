@@ -30,7 +30,7 @@ const handleSignUp=async ()=>{
   setErr("")
 
   try {
-    const result=await axios.post(`${process.meta.env.serverUrl}/api/auth/signup`,{name,userName,email,password},{withCredentials:true})
+    const result=await axios.post(`${import.meta.env.serverUrl}/api/auth/signup`,{name,userName,email,password},{withCredentials:true})
     dispatch(setUserData(result.data))
     setLoading(false)
   } catch (error) {

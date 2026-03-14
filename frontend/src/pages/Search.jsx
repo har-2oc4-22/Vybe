@@ -15,7 +15,7 @@ function Search() {
     const handleSearch=async ()=>{
      
         try {
-            const result=await axios.get(`${process.meta.env.serverUrl}/api/user/search?keyWord=${input}`,{withCredentials:true})
+            const result=await axios.get(`${import.meta.env.serverUrl}/api/user/search?keyWord=${input}`,{withCredentials:true})
            setSearchData(result.data)
             console.log(result.data)
         } catch (error) {

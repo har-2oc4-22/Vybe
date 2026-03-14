@@ -52,7 +52,7 @@ const handleClick=()=>{
 
 const handleLike=async ()=>{
     try {
-      const result=await axios.get(`${process.meta.env.serverUrl}/api/loop/like/${loop._id}`,{withCredentials:true})
+      const result=await axios.get(`${import.meta.env.serverUrl}/api/loop/like/${loop._id}`,{withCredentials:true})
       const updatedLoop=result.data
 
       const updatedLoops=loopData.map(p=>p._id==loop._id?updatedLoop:p)
@@ -64,7 +64,7 @@ const handleLike=async ()=>{
   const handleComment=async ()=>{
     
     try {
-      const result=await axios.post(`${process.meta.env.serverUrl}/api/loop/comment/${loop._id}`,{message},{withCredentials:true})
+      const result=await axios.post(`${import.meta.env.serverUrl}/api/loop/comment/${loop._id}`,{message},{withCredentials:true})
       const updatedLoop=result.data
 
       const updatedLoops=loopData.map(p=>p._id==loop._id?updatedLoop:p)

@@ -12,7 +12,7 @@ function getPrevChatUsers() {
   useEffect(()=>{
 const fetchUser=async ()=>{
     try {
-        const result=await axios.get(`${process.meta.env.serverUrl}/api/message/prevChats`,{withCredentials:true})
+        const result=await axios.get(`${import.meta.env.serverUrl}/api/message/prevChats`,{withCredentials:true})
          dispatch(setPrevChatUsers(result.data))
          console.log(result.data)
     } catch (error) {

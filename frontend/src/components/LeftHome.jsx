@@ -16,7 +16,7 @@ const dispatch=useDispatch()
 const {notificationData}=useSelector(state=>state.user)
     const handleLogOut=async ()=>{
         try {
-            const result=await axios.get(`${process.meta.env.serverUrl}/api/auth/signout`,{withCredentials:true})
+            const result=await axios.get(`${import.meta.env.serverUrl}/api/auth/signout`,{withCredentials:true})
             dispatch(setUserData(null))
         } catch (error) {
             console.log(error)

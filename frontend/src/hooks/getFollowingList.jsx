@@ -11,7 +11,7 @@ function getFollowingList() {
   useEffect(()=>{
 const fetchUser=async ()=>{
     try {
-        const result=await axios.get(`${process.meta.env.serverUrl}/api/user/followingList`,{withCredentials:true})
+        const result=await axios.get(`${import.meta.env.serverUrl}/api/user/followingList`,{withCredentials:true})
          dispatch(setFollowing(result.data))
     } catch (error) {
         console.log(error)

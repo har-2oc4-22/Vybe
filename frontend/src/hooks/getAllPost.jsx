@@ -11,7 +11,7 @@ function getAllPost() {
   useEffect(()=>{
 const fetchPost=async ()=>{
     try {
-        const result=await axios.get(`${process.meta.env.serverUrl}/api/post/getAll`,{withCredentials:true})
+        const result=await axios.get(`${import.meta.env.serverUrl}/api/post/getAll`,{withCredentials:true})
          dispatch(setPostData(result.data))
     } catch (error) {
         console.log(error)

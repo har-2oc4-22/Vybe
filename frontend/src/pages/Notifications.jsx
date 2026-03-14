@@ -14,7 +14,7 @@ function Notifications() {
     const dispatch=useDispatch()
     const markAsRead=async ()=>{
         try {
-            const result=await axios.post(`${process.meta.env.serverUrl}/api/user/markAsRead`,{notificationId:ids},{withCredentials:true})
+            const result=await axios.post(`${import.meta.env.serverUrl}/api/user/markAsRead`,{notificationId:ids},{withCredentials:true})
           await fetchNotifications()
         } catch (error) {
             console.log(error)
@@ -22,7 +22,7 @@ function Notifications() {
     }
 const fetchNotifications=async ()=>{
     try {
-        const result=await axios.get(`${process.meta.env.serverUrl}/api/user/getAllNotifications`,{withCredentials:true})
+        const result=await axios.get(`${import.meta.env.serverUrl}/api/user/getAllNotifications`,{withCredentials:true})
          dispatch(setNotificationData(result.data))
     } catch (error) {
         console.log(error)

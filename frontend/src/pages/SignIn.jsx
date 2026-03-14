@@ -25,7 +25,7 @@ const handleSignIn=async ()=>{
   setLoading(true)
   setErr("")
   try {
-    const result=await axios.post(`${process.meta.env.serverUrl}/api/auth/signin`,{userName,password},{withCredentials:true})
+    const result=await axios.post(`${import.meta.env.serverUrl}/api/auth/signin`,{userName,password},{withCredentials:true})
    dispatch(setUserData(result.data))
     setLoading(false)
   } catch (error) {
