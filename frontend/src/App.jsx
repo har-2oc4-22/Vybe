@@ -25,7 +25,6 @@ import Search from './pages/Search'
 import getAllNotifications from './hooks/getAllNotifications'
 import Notifications from './pages/Notifications'
 import { setNotificationData } from './redux/userSlice'
-export const process.meta.env.serverUrl="http://localhost:8000"
 function App() {
    getCurrentUser()
    getSuggestedUsers()
