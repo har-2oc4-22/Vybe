@@ -3,7 +3,7 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import { FiSearch } from "react-icons/fi";
 import axios from 'axios';
-import { serverUrl } from '../App';
+;
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearchData } from '../redux/userSlice';
 import dp from "../assets/dp.webp"
@@ -15,7 +15,7 @@ function Search() {
     const handleSearch=async ()=>{
      
         try {
-            const result=await axios.get(`${serverUrl}/api/user/search?keyWord=${input}`,{withCredentials:true})
+            const result=await axios.get(`${process.meta.env.serverUrl}/api/user/search?keyWord=${input}`,{withCredentials:true})
            setSearchData(result.data)
             console.log(result.data)
         } catch (error) {

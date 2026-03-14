@@ -7,7 +7,7 @@ import { IoMdSend } from "react-icons/io";
 import dp from "../assets/dp.webp"
 import SenderMessage from '../components/SenderMessage';
 import axios from 'axios';
-import { serverUrl } from '../App';
+;
 import { setMessages } from '../redux/messageSlice';
 import ReceiverMessage from '../components/ReceiverMessage';
 function MessageArea() {
@@ -35,7 +35,7 @@ const handleSendMessage=async (e)=>{
     if(backendImage){
        formData.append("image",backendImage)
     }
-    const result=await axios.post(`${serverUrl}/api/message/send/${selectedUser._id}`,formData,{withCredentials:true})
+    const result=await axios.post(`${process.meta.env.serverUrl}/api/message/send/${selectedUser._id}`,formData,{withCredentials:true})
     dispatch(setMessages([...messages,result.data]))
     setInput("")
     setBackendImage(null)
@@ -47,7 +47,7 @@ const handleSendMessage=async (e)=>{
 
 const getAllMessages=async ()=>{
   try {
-    const result=await axios.get(`${serverUrl}/api/message/getAll/${selectedUser._id}`,{withCredentials:true})
+    const result=await axios.get(`${process.meta.env.serverUrl}/api/message/getAll/${selectedUser._id}`,{withCredentials:true})
     dispatch(setMessages(result.data))
   } catch (error) {
     console.log(error)

@@ -4,7 +4,7 @@ import { FaRegHeart } from "react-icons/fa6";
 import dp from "../assets/dp.webp"
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { serverUrl } from '../App';
+;
 import { setUserData } from '../redux/userSlice';
 import OtherUser from './OtherUser';
 import Notifications from '../pages/Notifications';
@@ -16,7 +16,7 @@ const dispatch=useDispatch()
 const {notificationData}=useSelector(state=>state.user)
     const handleLogOut=async ()=>{
         try {
-            const result=await axios.get(`${serverUrl}/api/auth/signout`,{withCredentials:true})
+            const result=await axios.get(`${process.meta.env.serverUrl}/api/auth/signout`,{withCredentials:true})
             dispatch(setUserData(null))
         } catch (error) {
             console.log(error)

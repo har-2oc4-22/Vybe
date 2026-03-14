@@ -25,7 +25,7 @@ import Search from './pages/Search'
 import getAllNotifications from './hooks/getAllNotifications'
 import Notifications from './pages/Notifications'
 import { setNotificationData } from './redux/userSlice'
-export const serverUrl="http://localhost:8000"
+export const process.meta.env.serverUrl="http://localhost:8000"
 function App() {
    getCurrentUser()
    getSuggestedUsers()
@@ -41,7 +41,7 @@ function App() {
     const dispatch=useDispatch()
  useEffect(()=>{
   if(userData){
-    const socketIo=io(`${serverUrl}`,{
+    const socketIo=io(`${process.meta.env.serverUrl}`,{
       query:{
         userId:userData._id
       }
