@@ -11,7 +11,7 @@ function getCurrentUser() {
   useEffect(()=>{
 const fetchUser=async ()=>{
     try {
-        const result=await axios.get(`${import.meta.env.serverUrl}/api/user/current`,{withCredentials:true})
+        const result=await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/user/current`,{withCredentials:true})
          dispatch(setUserData(result.data))
          dispatch(setCurrentUserStory(result.data.story))
     } catch (error) {

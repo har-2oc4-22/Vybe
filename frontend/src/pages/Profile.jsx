@@ -23,7 +23,7 @@ function Profile() {
     const { postData } = useSelector(state => state.post)
     const handleProfile = async () => {
         try {
-            const result = await axios.get(`${import.meta.env.serverUrl}/api/user/getProfile/${userName}`, { withCredentials: true })
+            const result = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/user/getProfile/${userName}`, { withCredentials: true })
             dispatch(setProfileData(result.data))
         } catch (error) {
             console.log(error)
@@ -31,7 +31,7 @@ function Profile() {
     }
     const handleLogOut = async () => {
         try {
-            const result = await axios.get(`${import.meta.env.serverUrl}/api/auth/signout`, { withCredentials: true })
+            const result = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/auth/signout`, { withCredentials: true })
             dispatch(setUserData(null))
         } catch (error) {
             console.log(error)

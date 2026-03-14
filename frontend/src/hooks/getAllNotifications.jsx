@@ -11,7 +11,7 @@ function getAllNotifications() {
   useEffect(()=>{
 const fetchNotifications=async ()=>{
     try {
-        const result=await axios.get(`${import.meta.env.serverUrl}/api/user/getAllNotifications`,{withCredentials:true})
+        const result=await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/user/getAllNotifications`,{withCredentials:true})
          dispatch(setNotificationData(result.data))
     } catch (error) {
         console.log(error)

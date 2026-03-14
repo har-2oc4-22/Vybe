@@ -23,7 +23,7 @@ useEffect(()=>{
 },[story,userData,storyData,storyList])
 const handleViewers=async ()=>{
   try {
-    const result=await axios.get(`${import.meta.env.serverUrl}/api/story/view/${story._id}`,{withCredentials:true})
+    const result=await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/story/view/${story._id}`,{withCredentials:true})
     
   } catch (error) {
     console.log(error)

@@ -14,7 +14,7 @@ function Story() {
     const handleStory=async ()=>{
       dispatch(setStoryData(null))
         try {
-            const result=await axios.get(`${import.meta.env.serverUrl}/api/story/getByUserName/${userName}`,{withCredentials:true})
+            const result=await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/story/getByUserName/${userName}`,{withCredentials:true})
             dispatch(setStoryData(result.data[0]))
             console.log(storyData)
         } catch (error) {

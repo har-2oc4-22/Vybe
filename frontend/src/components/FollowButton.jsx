@@ -10,7 +10,7 @@ function FollowButton({targetUserId,tailwind,onFollowChange}) {
     const dispatch=useDispatch()
     const handleFollow=async ()=>{
         try {
-            const result=await axios.get(`${import.meta.env.serverUrl}/api/user/follow/${targetUserId}`,{withCredentials:true})
+            const result=await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/user/follow/${targetUserId}`,{withCredentials:true})
             if(onFollowChange){
                 onFollowChange()
             }

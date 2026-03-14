@@ -35,7 +35,7 @@ const handleSendMessage=async (e)=>{
     if(backendImage){
        formData.append("image",backendImage)
     }
-    const result=await axios.post(`${import.meta.env.serverUrl}/api/message/send/${selectedUser._id}`,formData,{withCredentials:true})
+    const result=await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/message/send/${selectedUser._id}`,formData,{withCredentials:true})
     dispatch(setMessages([...messages,result.data]))
     setInput("")
     setBackendImage(null)
@@ -47,7 +47,7 @@ const handleSendMessage=async (e)=>{
 
 const getAllMessages=async ()=>{
   try {
-    const result=await axios.get(`${import.meta.env.serverUrl}/api/message/getAll/${selectedUser._id}`,{withCredentials:true})
+    const result=await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/message/getAll/${selectedUser._id}`,{withCredentials:true})
     dispatch(setMessages(result.data))
   } catch (error) {
     console.log(error)

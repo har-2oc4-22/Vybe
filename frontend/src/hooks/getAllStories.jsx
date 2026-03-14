@@ -12,7 +12,7 @@ function getAllStories() {
   useEffect(()=>{
 const fetchStories=async ()=>{
     try {
-        const result=await axios.get(`${import.meta.env.serverUrl}/api/story/getAll`,{withCredentials:true})
+        const result=await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/story/getAll`,{withCredentials:true})
          dispatch(setStoryList(result.data))
          
     } catch (error) {

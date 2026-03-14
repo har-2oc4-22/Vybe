@@ -40,7 +40,7 @@ function App() {
     const dispatch=useDispatch()
  useEffect(()=>{
   if(userData){
-    const socketIo=io(`${import.meta.env.serverUrl}`,{
+    const socketIo=io(`${import.meta.env.VITE_SERVER_URL}`,{
       query:{
         userId:userData._id
       }

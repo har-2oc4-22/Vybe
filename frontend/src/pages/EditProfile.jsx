@@ -40,7 +40,7 @@ function EditProfile() {
                if(backendImage){
                 formdata.append("profileImage",backendImage)
                }
-            const result=await axios.post(`${import.meta.env.serverUrl}/api/user/editProfile`,formdata,{withCredentials:true})
+            const result=await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/user/editProfile`,formdata,{withCredentials:true})
             dispatch(setProfileData(result.data))
             dispatch(setUserData(result.data))
             setLoading(false)

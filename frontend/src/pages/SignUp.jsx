@@ -3,8 +3,7 @@ import logo from "../assets/logo2.png"
 import logo1 from "../assets/logo.png"
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
-import axios from "axios"
-;
+import axios from "axios";
 import { ClipLoader } from "react-spinners";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -30,7 +29,8 @@ const handleSignUp=async ()=>{
   setErr("")
 
   try {
-    const result=await axios.post(`${import.meta.env.serverUrl}/api/auth/signup`,{name,userName,email,password},{withCredentials:true})
+    console.log(import.meta.env.VITE_SERVER_URL);
+    const result=await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/auth/signup`,{name,userName,email,password},{withCredentials:true})
     dispatch(setUserData(result.data))
     setLoading(false)
   } catch (error) {

@@ -13,7 +13,7 @@ function getAllLoops() {
   useEffect(()=>{
 const fetchloops=async ()=>{
     try {
-        const result=await axios.get(`${import.meta.env.serverUrl}/api/loop/getAll`,{withCredentials:true})
+        const result=await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/loop/getAll`,{withCredentials:true})
          dispatch(setLoopData(result.data))
     } catch (error) {
         console.log(error)
